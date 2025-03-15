@@ -24,13 +24,7 @@ $sql = "INSERT INTO ticket (eventName, price, rowNumber, seatNumber, eventTime, 
         VALUES ('$eventName', '$price', '$rowNumber', '$seatNumber', '$eventTime', '$ticketNumber')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "
-    <script>
-        window.onload = function() {
-            window.print(); // Print ticket automatically
-        }
-    </script>
-    ";
+    echo "Success!";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -49,8 +43,6 @@ $conn->close();
     <link rel="stylesheet" href="style2.css" media="print">
 </head>
 <body>
-    <h1>Here's your ticket</h1>
-
     <div class="ticket">
         <div class="left">
             <div class="event"><?php echo $eventName; ?></div>
