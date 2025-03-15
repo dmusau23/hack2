@@ -24,7 +24,7 @@ $sql = "INSERT INTO ticket (eventName, price, rowNumber, seatNumber, eventTime, 
         VALUES ('$eventName', '$price', '$rowNumber', '$seatNumber', '$eventTime', '$ticketNumber')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Success!";
+    echo '<script>alert("Success!")</script>';
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -55,7 +55,7 @@ $conn->close();
         </div>
         <div class="right">
             <div class="admit">ADMIT ONE</div>
-            <div><?php echo $ticketNumber; ?></div>
+            <div><?php echo "#",$ticketNumber; ?></div>
         </div>
     </div>
 
